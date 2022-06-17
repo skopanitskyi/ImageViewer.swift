@@ -9,6 +9,7 @@ extension UIImageView {
         var imageLoader:ImageLoader?
         var initialIndex:Int = 0
         var options:[ImageViewerOption] = []
+        var openHandler: (() -> Void)?
     }
     
     private var vc:UIViewController? {
@@ -20,12 +21,14 @@ extension UIImageView {
     public func setupImageViewer(
         options:[ImageViewerOption] = [],
         from:UIViewController? = nil,
-        imageLoader:ImageLoader? = nil) {
+        imageLoader:ImageLoader? = nil,
+        openHandler: (() -> Void)?) {
         setup(
             datasource: SimpleImageDatasource(imageItems: [.image(image)]),
             options: options,
             from: from,
-            imageLoader: imageLoader)
+            imageLoader: imageLoader,
+            openHandler: openHandler)
     }
 
     public func setupImageViewer(
@@ -34,7 +37,8 @@ extension UIImageView {
         placeholder: UIImage? = nil,
         options:[ImageViewerOption] = [],
         from:UIViewController? = nil,
-        imageLoader:ImageLoader? = nil) {
+        imageLoader:ImageLoader? = nil,
+        openHandler: (() -> Void)?) {
         
         let datasource = SimpleImageDatasource(
             imageItems: [url].compactMap {
@@ -45,7 +49,8 @@ extension UIImageView {
             initialIndex: initialIndex,
             options: options,
             from: from,
-            imageLoader: imageLoader)
+            imageLoader: imageLoader,
+            openHandler: openHandler)
     }
     
     public func setupImageViewer(
@@ -53,7 +58,8 @@ extension UIImageView {
         initialIndex:Int = 0,
         options:[ImageViewerOption] = [],
         from:UIViewController? = nil,
-        imageLoader:ImageLoader? = nil) {
+        imageLoader:ImageLoader? = nil,
+        openHandler: (() -> Void)?) {
         
         let datasource = SimpleImageDatasource(
             imageItems: images.compactMap {
@@ -64,7 +70,8 @@ extension UIImageView {
             initialIndex: initialIndex,
             options: options,
             from: from,
-            imageLoader: imageLoader)
+            imageLoader: imageLoader,
+            openHandler: openHandler)
     }
 
     public func setupImageViewer(
@@ -73,7 +80,8 @@ extension UIImageView {
         options:[ImageViewerOption] = [],
         placeholder: UIImage? = nil,
         from:UIViewController? = nil,
-        imageLoader:ImageLoader? = nil) {
+        imageLoader:ImageLoader? = nil,
+        openHandler: (() -> Void)?) {
         
         let datasource = SimpleImageDatasource(
             imageItems: urls.compactMap {
@@ -84,7 +92,8 @@ extension UIImageView {
             initialIndex: initialIndex,
             options: options,
             from: from,
-            imageLoader: imageLoader)
+            imageLoader: imageLoader,
+            openHandler: openHandler)
     }
     
     public func setupImageViewer(
@@ -92,14 +101,16 @@ extension UIImageView {
         initialIndex:Int = 0,
         options:[ImageViewerOption] = [],
         from:UIViewController? = nil,
-        imageLoader:ImageLoader? = nil) {
+        imageLoader:ImageLoader? = nil,
+        openHandler: (() -> Void)?) {
         
         setup(
             datasource: datasource,
             initialIndex: initialIndex,
             options: options,
             from: from,
-            imageLoader: imageLoader)
+            imageLoader: imageLoader,
+            openHandler: openHandler)
     }
     
     private func setup(
@@ -107,7 +118,8 @@ extension UIImageView {
         initialIndex:Int = 0,
         options:[ImageViewerOption] = [],
         from: UIViewController? = nil,
-        imageLoader:ImageLoader? = nil) {
+        imageLoader:ImageLoader? = nil,
+        openHandler: (() -> Void)?) {
         
         var _tapRecognizer:TapWithDataRecognizer?
         gestureRecognizers?.forEach {
@@ -144,6 +156,7 @@ extension UIImageView {
         _tapRecognizer!.initialIndex = initialIndex
         _tapRecognizer!.options = options
         _tapRecognizer!.from = from
+        _tapRecognizer!.openHandler = openHandler
         addGestureRecognizer(_tapRecognizer!)
     }
     
@@ -157,6 +170,8 @@ extension UIImageView {
             options: sender.options,
             initialIndex: sender.initialIndex)
         let presentFromVC = sender.from ?? vc
-        presentFromVC?.present(imageCarousel, animated: true)
+        presentFromVC?.present(imageCarousel, animated: true) {
+          sender.openHandler?()
+      }
     }
 }
