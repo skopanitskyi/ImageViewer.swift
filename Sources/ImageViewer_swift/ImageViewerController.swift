@@ -47,6 +47,10 @@ UIGestureRecognizerDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .darkContent
+  }
     
     override func loadView() {
         let view = UIView()
@@ -78,7 +82,6 @@ UIGestureRecognizerDelegate {
         leading.isActive = true
         trailing.isActive = true
         bottom.isActive = true
-        
     }
     
     override func viewDidLoad() {

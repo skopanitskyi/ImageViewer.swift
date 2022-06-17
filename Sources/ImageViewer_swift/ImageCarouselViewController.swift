@@ -29,8 +29,7 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
     
     var theme:ImageViewerTheme = .light {
         didSet {
-            navItem.leftBarButtonItem?.tintColor = theme.tintColor
-            backgroundView?.backgroundColor = theme.color
+            backgroundView.backgroundColor = theme.color
         }
     }
     
@@ -47,8 +46,8 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
         return _navBar
     }()
     
-    private(set) lazy var backgroundView:UIView? = {
-        let _v = UIView()
+    private(set) lazy var backgroundView:SnackBarPresentedView = {
+        let _v = SnackBarPresentedView()
         _v.backgroundColor = theme.color
         _v.alpha = 1.0
         return _v
@@ -57,19 +56,25 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
     private(set) lazy var navItem = UINavigationItem()
     
     private let imageViewerPresentationDelegate: ImageViewerTransitionPresentationManager
+    private let snackViewImage: UIImage?
+    private let snackTitle: String
     
     public init(
         sourceView:UIImageView,
         imageDataSource: ImageDataSource?,
         imageLoader: ImageLoader,
         options:[ImageViewerOption] = [],
-        initialIndex:Int = 0) {
+        initialIndex:Int = 0,
+        snackViewImage: UIImage?,
+        snackTitle: String) {
         
         self.initialSourceView = sourceView
         self.initialIndex = initialIndex
         self.options = options
         self.imageDatasource = imageDataSource
         self.imageLoader = imageLoader
+        self.snackViewImage = snackViewImage
+        self.snackTitle = snackTitle
         let pageOptions = [UIPageViewController.OptionsKey.interPageSpacing: 20]
         
         var _imageContentMode = imageContentMode
@@ -107,17 +112,19 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
             action: #selector(dismiss(_:)))
         
         navItem.leftBarButtonItem = closeBarButton
-        navItem.leftBarButtonItem?.tintColor = theme.tintColor
+        navItem.leftBarButtonItem?.tintColor = .black
         navBar.alpha = 0.0
         navBar.items = [navItem]
         navBar.insert(to: view)
     }
     
     private func addBackgroundView() {
-        guard let backgroundView = backgroundView else { return }
         view.addSubview(backgroundView)
         backgroundView.bindFrameToSuperview()
         view.sendSubviewToBack(backgroundView)
+        backgroundView.bringToFront()
+        backgroundView.setSnackBarImage(snackViewImage)
+        backgroundView.setSnackBarTitle(snackTitle)
     }
     
     private func applyOptions() {
@@ -165,6 +172,11 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
             setViewControllers([initialVC], direction: .forward, animated: true)
         }
     }
+  
+  public override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    backgroundView.showSnackBarView()
+  }
 
     @objc
     private func dismiss(_ sender:UIBarButtonItem) {
@@ -184,10 +196,7 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
     }
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        if theme == .dark {
-            return .lightContent
-        }
-        return .default
+      return .darkContent
     }
 }
 

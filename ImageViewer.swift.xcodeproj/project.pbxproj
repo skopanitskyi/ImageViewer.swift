@@ -20,6 +20,16 @@
 		CE4E4B8C285C93140056B1FC /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B80285C93140056B1FC /* ImageViewerController.swift */; };
 		CE4E4B8D285C93140056B1FC /* SimpleImageDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B81285C93140056B1FC /* SimpleImageDatasource.swift */; };
 		CE4E4B90285C937C0056B1FC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E4B8F285C937C0056B1FC /* SDWebImage */; };
+		CE4E4B92285C9A8E0056B1FC /* SnackBarPresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B91285C9A8E0056B1FC /* SnackBarPresentedView.swift */; };
+		CE4E4B94285C9AE30056B1FC /* InitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B93285C9AE30056B1FC /* InitView.swift */; };
+		CE4E4B96285C9B040056B1FC /* UserDataEditedSnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B95285C9B040056B1FC /* UserDataEditedSnackBarView.swift */; };
+		CE4E4B99285CA3F00056B1FC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE4E4B98285CA3F00056B1FC /* SnapKit */; };
+		CE4E4B9B285CA4540056B1FC /* LineHeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B9A285CA4540056B1FC /* LineHeightLabel.swift */; };
+		CE4E4B9D285CA4970056B1FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B9C285CA4970056B1FC /* Constants.swift */; };
+		CE4E4B9F285CA5020056B1FC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E4B9E285CA5020056B1FC /* UILabel+Extension.swift */; };
+		CE4E4BA4285CA5C30056B1FC /* Geometria.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4E4BA1285CA5C30056B1FC /* Geometria.ttf */; };
+		CE4E4BA5285CA5C30056B1FC /* Geometria-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4E4BA2285CA5C30056B1FC /* Geometria-Bold.ttf */; };
+		CE4E4BA6285CA5C30056B1FC /* Geometria-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4E4BA3285CA5C30056B1FC /* Geometria-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +47,15 @@
 		CE4E4B7F285C93140056B1FC /* ImageViewerTransitionPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerTransitionPresentationManager.swift; sourceTree = "<group>"; };
 		CE4E4B80285C93140056B1FC /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
 		CE4E4B81285C93140056B1FC /* SimpleImageDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleImageDatasource.swift; sourceTree = "<group>"; };
+		CE4E4B91285C9A8E0056B1FC /* SnackBarPresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarPresentedView.swift; sourceTree = "<group>"; };
+		CE4E4B93285C9AE30056B1FC /* InitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitView.swift; sourceTree = "<group>"; };
+		CE4E4B95285C9B040056B1FC /* UserDataEditedSnackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataEditedSnackBarView.swift; sourceTree = "<group>"; };
+		CE4E4B9A285CA4540056B1FC /* LineHeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineHeightLabel.swift; sourceTree = "<group>"; };
+		CE4E4B9C285CA4970056B1FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE4E4B9E285CA5020056B1FC /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		CE4E4BA1285CA5C30056B1FC /* Geometria.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Geometria.ttf; sourceTree = "<group>"; };
+		CE4E4BA2285CA5C30056B1FC /* Geometria-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Bold.ttf"; sourceTree = "<group>"; };
+		CE4E4BA3285CA5C30056B1FC /* Geometria-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geometria-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4E4B90285C937C0056B1FC /* SDWebImage in Frameworks */,
+				CE4E4B99285CA3F00056B1FC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +99,7 @@
 		CE4E4B75285C93140056B1FC /* ImageViewer_swift */ = {
 			isa = PBXGroup;
 			children = (
+				CE4E4BA0285CA5C30056B1FC /* Fonts */,
 				CE4E4B76285C93140056B1FC /* UIImageView_Extensions.swift */,
 				CE4E4B77285C93140056B1FC /* ImageLoader.swift */,
 				CE4E4B78285C93140056B1FC /* ImageViewer_swift.h */,
@@ -91,9 +112,25 @@
 				CE4E4B7F285C93140056B1FC /* ImageViewerTransitionPresentationManager.swift */,
 				CE4E4B80285C93140056B1FC /* ImageViewerController.swift */,
 				CE4E4B81285C93140056B1FC /* SimpleImageDatasource.swift */,
+				CE4E4B91285C9A8E0056B1FC /* SnackBarPresentedView.swift */,
+				CE4E4B93285C9AE30056B1FC /* InitView.swift */,
+				CE4E4B95285C9B040056B1FC /* UserDataEditedSnackBarView.swift */,
+				CE4E4B9A285CA4540056B1FC /* LineHeightLabel.swift */,
+				CE4E4B9C285CA4970056B1FC /* Constants.swift */,
+				CE4E4B9E285CA5020056B1FC /* UILabel+Extension.swift */,
 			);
 			name = ImageViewer_swift;
 			path = Sources/ImageViewer_swift;
+			sourceTree = "<group>";
+		};
+		CE4E4BA0285CA5C30056B1FC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE4E4BA1285CA5C30056B1FC /* Geometria.ttf */,
+				CE4E4BA2285CA5C30056B1FC /* Geometria-Bold.ttf */,
+				CE4E4BA3285CA5C30056B1FC /* Geometria-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +163,7 @@
 			name = ImageViewer.swift;
 			packageProductDependencies = (
 				CE4E4B8F285C937C0056B1FC /* SDWebImage */,
+				CE4E4B98285CA3F00056B1FC /* SnapKit */,
 			);
 			productName = ImageViewer.swift;
 			productReference = 3FBC5E7424E5908400E68938 /* ImageViewer_swift.framework */;
@@ -156,6 +194,7 @@
 			mainGroup = 3FBC5E6A24E5908400E68938;
 			packageReferences = (
 				CE4E4B8E285C937C0056B1FC /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				CE4E4B97285CA3F00056B1FC /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 3FBC5E7524E5908400E68938 /* Products */;
 			projectDirPath = "";
@@ -171,6 +210,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4E4BA4285CA5C30056B1FC /* Geometria.ttf in Resources */,
+				CE4E4BA6285CA5C30056B1FC /* Geometria-Light.ttf in Resources */,
+				CE4E4BA5285CA5C30056B1FC /* Geometria-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,17 +223,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4E4B9F285CA5020056B1FC /* UILabel+Extension.swift in Sources */,
 				CE4E4B85285C93140056B1FC /* UIView_Extensions.swift in Sources */,
 				CE4E4B8A285C93140056B1FC /* ImageViewerTheme.swift in Sources */,
 				CE4E4B83285C93140056B1FC /* ImageLoader.swift in Sources */,
 				CE4E4B8B285C93140056B1FC /* ImageViewerTransitionPresentationManager.swift in Sources */,
+				CE4E4B92285C9A8E0056B1FC /* SnackBarPresentedView.swift in Sources */,
 				CE4E4B87285C93140056B1FC /* ImageCarouselViewController.swift in Sources */,
 				CE4E4B86285C93140056B1FC /* UINavigationBar_Extensions.swift in Sources */,
+				CE4E4B9D285CA4970056B1FC /* Constants.swift in Sources */,
 				CE4E4B8D285C93140056B1FC /* SimpleImageDatasource.swift in Sources */,
 				CE4E4B88285C93140056B1FC /* ImageViewerOption.swift in Sources */,
 				CE4E4B8C285C93140056B1FC /* ImageViewerController.swift in Sources */,
 				CE4E4B89285C93140056B1FC /* ImageItem.swift in Sources */,
 				CE4E4B82285C93140056B1FC /* UIImageView_Extensions.swift in Sources */,
+				CE4E4B9B285CA4540056B1FC /* LineHeightLabel.swift in Sources */,
+				CE4E4B96285C9B040056B1FC /* UserDataEditedSnackBarView.swift in Sources */,
+				CE4E4B94285C9AE30056B1FC /* InitView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -306,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +380,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Config/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,8 +390,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelhenry.ImageViewer-swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -361,7 +410,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Config/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,8 +420,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelhenry.ImageViewer-swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -408,6 +458,14 @@
 				kind = branch;
 			};
 		};
+		CE4E4B97285CA3F00056B1FC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -415,6 +473,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE4E4B8E285C937C0056B1FC /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		CE4E4B98285CA3F00056B1FC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE4E4B97285CA3F00056B1FC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -18,5 +18,11 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Geometria-Light.ttf</string>
+		<string>Geometria.ttf</string>
+		<string>Geometria-Bold.ttf</string>
+	</array>
 </dict>
 </plist>
