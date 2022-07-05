@@ -144,7 +144,7 @@ extension UIImageView {
         
         isUserInteractionEnabled = true
         
-        var imageContentMode: UIView.ContentMode = .scaleAspectFill
+        var imageContentMode: UIView.ContentMode = .scaleAspectFit
         options.forEach {
             switch $0 {
             case .contentMode(let contentMode):
